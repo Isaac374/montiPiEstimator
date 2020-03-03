@@ -1,0 +1,56 @@
+#include <iostream>
+#include <fstream>
+#include <vector>
+#include <random>
+#include <cmath>
+#include <"histogram.h">
+// FunctionMontiPi(N)
+using namespace std;
+
+double MontiPi(){
+
+    std::random_device seeder;
+    std::mt19937_64 gen(seeder());
+    std::uniform_real_distribution<double> dist(0.0, 1.0);
+
+    double realPi =3.14159265358979;
+    long N_tot, N_in = 0;
+    std::cout<< "Enter total number of points to generate:";
+    std::cin >> N_tot;
+
+    for (int i = 0 ; i< N_tot; ++i){
+        double x=dist(gen);
+        double y=dist(gen);
+        double r= std::sqrt(x*x+y*y);
+
+        if (r<=1) {
+            N_in++;
+        }
+
+
+    }
+
+    double pi=(4.0*N_in)/N_tot;
+    std::cout.precision(15);
+    std::cout << "estimated value of pi:  " << pi<<"\n";
+    std::cout<< "actual value of pi:  " << realPi<<"\n";
+    return pi;
+    }
+    function montePi(n) # from above
+int main(){
+    std::vector<double>
+    int N = 0; //
+    int N_est = //The number of times to generate an estimate of pi
+    double pis =       //Array with N_est elements
+    double pi_avg = 0.0
+
+         for( int i = 0; i < N_est; i = i + 1 ) {
+     pis[i] = montePi(N) # We want to save these to do some more with them later.
+            pi_avg += pis[i]
+            output pi_avg/N_est
+
+
+
+}
+    return 0;
+
